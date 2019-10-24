@@ -2,6 +2,7 @@ package com.citicup.controller;
 
 import com.alibaba.fastjson.JSONObject;
 
+import com.citicup.CitiCupApplication;
 import com.citicup.bean.Account;
 import com.citicup.bean.BackData;
 import com.citicup.dao.AccountDao;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/session")
@@ -50,7 +52,16 @@ public class Session {
                 map.put("mark",tempAccount.getMark());
                 System.out.println("宁的问卷分数为"+tempAccount.getMark());
             }
-            accountDao.addLoginAccount(tempAccount);
+
+            String string= UUID.randomUUID().toString().replace("-","");  //32位随机String
+            map.put("token",string);  //登录时传回去的map加一个
+
+            System.out.println(string);
+
+            Map<String,Account> token=new HashMap();   //后端保存token
+            token.put(string,tempAccount);
+            CitiCupApplication.tokenList.add(token);
+
             return BackData.json("0", map);
         }
         else {
@@ -61,8 +72,20 @@ public class Session {
 
     @PostMapping("/logout")
     public JSONObject logout(@RequestBody JSONObject value){
-        String name=(String) value.get("username");
+        String token=(String) value.get("token");
+        Account account=CitiCupApplication.find(token);
+        String name=account.getUsername();
+
+        Map map=null;
         if(accountDao.findByName(name)!=null){
+            for(Map<String,Account> temp:CitiCupApplication.tokenList){
+                for(String string:temp.keySet()){
+                    if(string.equals(token)){
+                        map=temp;
+                    }
+                }
+            }
+            CitiCupApplication.tokenList.remove(map);
             System.out.println(name+"已下线");
             return BackData.json("0", new JSONObject());
         }

@@ -23,12 +23,6 @@ public interface AccountDao {
     @Insert("insert into account(username,password,mark) values(#{username},#{password},#{mark})")
     void addAccount(Account account);   //增加一个用户
 
-    @Insert("insert into login_account(username) values(#{username})")
-    void addLoginAccount(Account account);  //增加一个登陆状态的用户
-
-    @Delete("delete from login_account where username=#{username}")
-    void deleteLoginAccount(String username);   //删除一个登陆状态的用户
-
     @Update("update account set password=#{password} where username=#{username}")
     void changePassword(String username,String password);   //修改密码
 

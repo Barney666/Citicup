@@ -3,6 +3,8 @@ package com.citicup.controller;
 
 import com.alibaba.fastjson.JSONObject;
 
+import com.citicup.CitiCupApplication;
+import com.citicup.bean.Account;
 import com.citicup.bean.BackData;
 import com.citicup.dao.AccountDao;
 import com.citicup.utils.AnalysisUtils;
@@ -22,13 +24,6 @@ public class Analysis {
     @Autowired
     private AccountDao accountDao;
 
-    @RequestMapping("/test")
-    public void test(){
-        String foot=accountDao.findFoot("barney");
-        if(foot==null) foot="600100";
-        else foot+="&"+"600100";
-        accountDao.changeFoot(foot,"barney");    //添加足迹
-    }
 
 	@RequestMapping("/analysis")
     public JSONObject analysis(@RequestBody Map<String,String> value){
@@ -46,10 +41,13 @@ public class Analysis {
                stockname=stock;
            }
 
-           String foot=accountDao.findFoot(value.get("username"));
+           String token=value.get("token");
+           Account account= CitiCupApplication.find(token);
+           String username=account.getUsername();
+           String foot=accountDao.findFoot(username);
            if(foot==null) foot=stockcode;
            else foot+="&"+stockcode;
-           accountDao.changeFoot(foot,value.get("username"));    //添加足迹
+           accountDao.changeFoot(foot,username);    //添加足迹
 
            String result=AnalysisUtils.result(stockcode);
 

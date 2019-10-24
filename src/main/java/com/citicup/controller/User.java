@@ -3,6 +3,7 @@ package com.citicup.controller;
 
 import com.alibaba.fastjson.JSONObject;
 
+import com.citicup.CitiCupApplication;
 import com.citicup.bean.Account;
 import com.citicup.bean.BackData;
 import com.citicup.dao.AccountDao;
@@ -26,9 +27,12 @@ public class User {
 
     @RequestMapping("/password")
     public JSONObject changePassword(@RequestBody Map<String,String> value){
-        String username=value.get("username");
+        String token=value.get("token");
+        Account account= CitiCupApplication.find(token);
+        String username=account.getUsername();
         String oldPassword=value.get("oldpassword");
         String newPassword=value.get("newpassword");
+
         if(accountDao.findByNameAndPassword(username,oldPassword)!=null){
             accountDao.changePassword(username,newPassword);
             System.out.println("成功修改密码为"+newPassword);
@@ -41,9 +45,11 @@ public class User {
     }
 
     @RequestMapping(value = "/setmark")
-    public JSONObject changeMark(@RequestBody Map value){ //改分数
-        String username=(String)value.get("username");
-        String mark=(String)value.get("mark");
+    public JSONObject changeMark(@RequestBody Map<String,String> value){ //改分数
+        String token=value.get("token");
+        Account account= CitiCupApplication.find(token);
+        String username=account.getUsername();
+        String mark=value.get("mark");
         System.out.println("要将"+username+"的成绩修改为"+mark);
         if(accountDao.findByName(username)!=null){
             accountDao.changeMark(username,mark);
@@ -58,7 +64,9 @@ public class User {
 
     @RequestMapping(value = "/getmark")
     public JSONObject getMark(@RequestBody Map<String,String> value){ //获取分数
-        String username=value.get("username");
+        String token=value.get("token");
+        Account account= CitiCupApplication.find(token);
+        String username=account.getUsername();
         Account tempAccount=accountDao.findByName(username);
         Map map=new HashMap<>();
         if(tempAccount!=null) {
@@ -74,7 +82,10 @@ public class User {
 
     @RequestMapping("/footprint")
     public JSONObject footPrint(@RequestBody Map<String,String> value){
-        String foot=accountDao.findFoot(value.get("username"));
+        String token=value.get("token");
+        Account account= CitiCupApplication.find(token);
+        String username=account.getUsername();
+        String foot=accountDao.findFoot(username);
         ArrayList<String> arrayList=new ArrayList<>();
         for(String temp:foot.split("&")){
             arrayList.add(temp);
