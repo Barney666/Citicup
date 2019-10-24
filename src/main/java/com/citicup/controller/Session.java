@@ -58,9 +58,7 @@ public class Session {
 
             System.out.println(string);
 
-            Map<String,Account> token=new HashMap();   //后端保存token
-            token.put(string,tempAccount);
-            CitiCupApplication.tokenList.add(token);
+            CitiCupApplication.tokenMap.put(string,tempAccount);//后端保存token
 
             return BackData.json("0", map);
         }
@@ -76,16 +74,13 @@ public class Session {
         Account account=CitiCupApplication.find(token);
         String name=account.getUsername();
 
-        Map map=null;
+
         if(accountDao.findByName(name)!=null){
-            for(Map<String,Account> temp:CitiCupApplication.tokenList){
-                for(String string:temp.keySet()){
-                    if(string.equals(token)){
-                        map=temp;
-                    }
+            for(String string:CitiCupApplication.tokenMap.keySet()){
+                if(string.equals(token)){
+                    CitiCupApplication.tokenMap.remove(string);
                 }
             }
-            CitiCupApplication.tokenList.remove(map);
             System.out.println(name+"已下线");
             return BackData.json("0", new JSONObject());
         }
