@@ -1,0 +1,72 @@
+package com.citicup.controller;
+
+import com.alibaba.fastjson.JSONObject;
+
+import com.citicup.bean.Account;
+import com.citicup.bean.BackData;
+import com.citicup.dao.AccountDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/session")
+public class Session {
+
+    @Autowired
+    private AccountDao accountDao;
+
+
+    @PostMapping("/register")
+    public JSONObject register(@RequestBody Account account){   //查询数据 没有返回的是null
+        System.out.println("一个用户进行注册操作");
+        if(accountDao.findByName(account.getUsername())==null){
+            accountDao.addAccount(account);
+            System.out.println("成功创建账户"+account);
+            return BackData.json("0",new JSONObject());
+        }
+        System.out.println("用户名被占用");
+        return BackData.json("1",new JSONObject());
+    }
+
+    @PostMapping("/login")
+    public JSONObject login(@RequestBody Account account){
+        System.out.println("一个用户进行登录操作");
+
+        //这里可以加一个已经登陆的用户重复登录的提示 后端可以判断出他是否登陆
+        Account tempAccount=accountDao.findByNameAndPassword(account.getUsername(),account.getPassword());
+        if(tempAccount!=null){
+            System.out.println("成功登陆，欢迎宁"+tempAccount);
+            Map map=new HashMap();
+            map.put("username",tempAccount.getUsername());
+            if(tempAccount.getMark()==null){  //未测试
+                map.put("mark","-1");
+                System.out.println("宁还没填写问卷");
+            }
+            else{
+                map.put("mark",tempAccount.getMark());
+                System.out.println("宁的问卷分数为"+tempAccount.getMark());
+            }
+            accountDao.addLoginAccount(tempAccount);
+            return BackData.json("0", map);
+        }
+        else {
+            System.out.println("用户名不正确或密码错误");
+            return BackData.json("1", new JSONObject());
+        }
+    }
+
+    @PostMapping("/logout")
+    public JSONObject logout(@RequestBody JSONObject value){
+        String name=(String) value.get("username");
+        if(accountDao.findByName(name)!=null){
+            System.out.println(name+"已下线");
+            return BackData.json("0", new JSONObject());
+        }
+        else return BackData.json("1", new JSONObject());
+    }
+}
+
