@@ -1,6 +1,6 @@
 # Citicup
 数据库名citicup
-表名 accoun
+表名 account
 
 MySQL语句：
 CREATE TABLE account(
