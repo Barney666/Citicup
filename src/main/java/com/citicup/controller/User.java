@@ -87,8 +87,10 @@ public class User {
         String username=account.getUsername();
         String foot=accountDao.findFoot(username);
         ArrayList<String> arrayList=new ArrayList<>();
-        for(String temp:foot.split("&")){
-            arrayList.add(temp);
+        if(foot!=null){
+            for(String temp:foot.split("&")){
+                arrayList.add(temp);
+            }
         }
         Map map=new HashMap();
         map.put("footprints",arrayList);

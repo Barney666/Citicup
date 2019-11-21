@@ -30,7 +30,7 @@ public class Information {
             }
             String number=value.get("number");
 
-            String innerData=AnalysisUtils.readData(stockcode,number);
+            String[][] innerData=AnalysisUtils.readData(stockcode,number);
 
             Map map=new HashMap();
             map.put("stockname",stockname);

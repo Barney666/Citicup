@@ -20,6 +20,9 @@ public interface AccountDao {
     @Select("select footprint from account where username=#{username}")
     String findFoot(String username);
 
+    @Select("select mark from account where username=#{username}")
+    String findMark(String username);    //获取成绩
+
     @Insert("insert into account(username,password,mark) values(#{username},#{password},#{mark})")
     void addAccount(Account account);   //增加一个用户
 

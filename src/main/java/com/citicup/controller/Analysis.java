@@ -41,18 +41,22 @@ public class Analysis {
            Account account= CitiCupApplication.find(token);
            String username=account.getUsername();
 
+
            String foot=accountDao.findFoot(username);
            if(foot==null) foot=stockcode;
            else foot+="&"+stockcode;
            accountDao.changeFoot(foot,username);    //添加足迹
 
-           String result=AnalysisUtils.result(stockcode);
+           String mark=accountDao.findMark(username);
+           String result=AnalysisUtils.result(stockcode,mark);
+
 
 		   JSONObject object = JSONObject.parseObject(result);
 		   object.put("stockname", stockname);
 		   object.put("stockcode", stockcode);
            return BackData.json("0", object);
        }catch (Exception e){
+           e.printStackTrace();
            return BackData.json("1", new JSONObject());
        }
 
