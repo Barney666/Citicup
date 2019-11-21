@@ -1,13 +1,20 @@
 package com.citicup.utils;
 
 
+import com.alibaba.fastjson.JSONObject;
+import com.citicup.bean.BackData;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AnalysisUtils {
 
-	private static String pyDir = "C:\\huaqibei\\python\\";
+	private static String pyDir = "F:\\github\\HuaQiBei__PythonProject\\";
+//	private static String pyDir = "C:\\huaqibei\\python\\";
 
     //负责寻找Code与Name的对应
     public static String find(String stock,boolean whether){  //whether代表看是不是Code
@@ -20,10 +27,10 @@ public class AnalysisUtils {
                         stock,
                         pyDir + "Name_Code2.csv"};
                 Process process=Runtime.getRuntime().exec(arg);
-                BufferedReader in= new BufferedReader(new InputStreamReader(process.getInputStream()));
+                BufferedReader in= new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("gbk")));
 
                 line=in.readLine();
-                System.out.println(line);    //输出名字 这块中文乱码 先不管了
+                System.out.println(line);
                 in.close();
                 process.waitFor();
 
@@ -95,5 +102,34 @@ public class AnalysisUtils {
         return result.toString().trim();
     }
 
+
+    public static String readData(String code,String number){
+        String line=null;
+        StringBuilder result=new StringBuilder();
+        try {
+            String[] arg=new String[] {"python",
+                    pyDir + "information.py",
+                    pyDir + number+"\\"+code+".csv"
+            };
+            Process process=Runtime.getRuntime().exec(arg);
+            BufferedReader in= new BufferedReader(new InputStreamReader(process.getInputStream(),Charset.forName("gbk")));
+
+            while ((line=in.readLine())!=null){
+                System.out.println(line);   //输出代码 假设是把输出的都.append变成一个String变成line
+                if (!line.isEmpty()) result.append(line);
+            }
+            in.close();
+            process.waitFor();
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        System.out.println(result.toString().trim());
+
+        return result.toString().trim();
+
+    }
 
 }

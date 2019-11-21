@@ -9,13 +9,9 @@ import com.citicup.bean.BackData;
 import com.citicup.dao.AccountDao;
 import com.citicup.utils.AnalysisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
@@ -27,10 +23,10 @@ public class Analysis {
 
 	@RequestMapping("/analysis")
     public JSONObject analysis(@RequestBody Map<String,String> value){
-       String stockcode = "";
-       String stockname = "";
+       String stockcode;
+       String stockname;
        try {
-           String stock=(String) value.get("stock");
+           String stock=value.get("stock");
            System.out.println(stock);
            if (stock.matches("[0-9]+")) {  //是代码
                stockcode=stock;
@@ -44,6 +40,7 @@ public class Analysis {
            String token=value.get("token");
            Account account= CitiCupApplication.find(token);
            String username=account.getUsername();
+
            String foot=accountDao.findFoot(username);
            if(foot==null) foot=stockcode;
            else foot+="&"+stockcode;
