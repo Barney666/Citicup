@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acf17d4c-d819-48dc-9671-141a80d9e231" name="Default Changelist" comment="">
+    <list default="true" id="acf17d4c-d819-48dc-9671-141a80d9e231" name="Default Changelist" comment="加入information">
       <change afterPath="$PROJECT_DIR$/.idea/azureSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/citicup/CitiCupApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citicup/CitiCupApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/citicup/controller/Analysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citicup/controller/Analysis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/citicup/controller/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citicup/controller/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/citicup/utils/AnalysisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citicup/utils/AnalysisUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/CitiCupApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+            <state relative-caret-position="154">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="2354">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1342">
-              <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+            <state relative-caret-position="1100">
+              <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/bean/BackData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -88,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+            <state relative-caret-position="132">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Information.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="440">
+              <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -179,9 +173,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/citicup/CitiCupApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/a.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/citicup/controller/Information.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java" />
       </list>
     </option>
   </component>
@@ -221,7 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -355,6 +348,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="CatdeaLogs" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -452,7 +446,8 @@
       <workItem from="1572356381364" duration="860000" />
       <workItem from="1573908375877" duration="1370000" />
       <workItem from="1574173442907" duration="988000" />
-      <workItem from="1574307450755" duration="5300000" />
+      <workItem from="1574307450755" duration="5911000" />
+      <workItem from="1574314044638" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="使用token版本(Analysis涉及python文件 所以没测试 但应该没什么问题)">
       <created>1571918942268</created>
@@ -468,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571923495674</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="加入information">
+      <created>1574313345247</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574313345247</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -480,7 +482,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57353000" />
+    <option name="totallyTimeSpent" value="58196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +497,7 @@
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1964408" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1964408" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -542,7 +544,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="使用token版本(Analysis涉及python文件 所以没测试 但应该没什么问题)" />
     <MESSAGE value="更改使用token的Map(去除List)" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改使用token的Map(去除List)" />
+    <MESSAGE value="加入information" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入information" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.0.RELEASE/spring-core-5.2.0.RELEASE.jar!/org/springframework/core/io/AbstractResource.class">
@@ -811,6 +814,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/CitiCupApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2354">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/bean/BackData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/dao/AccountDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -831,47 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/CitiCupApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1342">
-          <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/bean/BackData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Analysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        <state relative-caret-position="132">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -880,18 +893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/controller/Information.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citicup/utils/AnalysisUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="440">
+          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

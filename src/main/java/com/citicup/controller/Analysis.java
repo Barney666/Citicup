@@ -37,7 +37,7 @@ public class Analysis {
                stockname=stock;
            }
 
-           String token=value.get("token");
+           String token=value.get("token");   //这块要先注册 因为要添加足迹
            Account account= CitiCupApplication.find(token);
            String username=account.getUsername();
 
