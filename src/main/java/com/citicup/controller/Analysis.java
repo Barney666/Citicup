@@ -2,18 +2,19 @@ package com.citicup.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-
 import com.citicup.CitiCupApplication;
 import com.citicup.bean.Account;
 import com.citicup.bean.BackData;
 import com.citicup.dao.AccountDao;
 import com.citicup.utils.AnalysisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
+@CrossOrigin   //跨域请求
 @RestController
 public class Analysis {
 

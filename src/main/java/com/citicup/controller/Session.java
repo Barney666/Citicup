@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/session")
 public class Session {

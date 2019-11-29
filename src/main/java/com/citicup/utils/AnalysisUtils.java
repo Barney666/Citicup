@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class AnalysisUtils {
 
-	private static String pyDir = "F:/github/HuaQiBei__PythonProject/";
+	private static String pyDir = "F:\\github\\HuaQiBei__PythonProject\\";
 //	private static String pyDir = "C:\\huaqibei\\python\\";
 
     //负责寻找Code与Name的对应
@@ -142,7 +142,6 @@ public class AnalysisUtils {
         }
         return null;
     }
-
 
 
     public static String[][] readData(String code,String number){   //返回四张表和成长能力

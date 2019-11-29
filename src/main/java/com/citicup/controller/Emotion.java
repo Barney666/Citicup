@@ -3,13 +3,13 @@ package com.citicup.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.citicup.bean.BackData;
 import com.citicup.utils.AnalysisUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@CrossOrigin
 @RestController
+
 public class Emotion {
 
     @PostMapping("/emotion")
@@ -26,13 +26,13 @@ public class Emotion {
                 stockcode = AnalysisUtils.find(stock, false);
                 stockname = stock;
             }
-            String result=AnalysisUtils.snow(stockcode);
+            String result=AnalysisUtils.snow(stockname);
             JSONObject object = JSONObject.parseObject(result);
             return BackData.json("0",object);
         }catch (Exception e){
             e.printStackTrace();
             return BackData.json("1",e);
         }
-
     }
+
 }
