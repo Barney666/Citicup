@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class AnalysisUtils {
 
-	private static String pyDir = "F:\\github\\HuaQiBei__PythonProject\\";
+	private static String pyDir = "F:/github/HuaQiBei__PythonProject/";
 //	private static String pyDir = "C:\\huaqibei\\python\\";
 
     //负责寻找Code与Name的对应
@@ -71,39 +71,81 @@ public class AnalysisUtils {
     public static String result(String code,String mark){
         //调用model.py
         String line=null;
+        StringBuilder result1=new StringBuilder();
+        StringBuilder result2=new StringBuilder();
+        try {
+            String[] arg=new String[] {pyDir+"venv\\Scripts\\python.exe",
+                    pyDir + "model_before.py", code};
+            Process process=Runtime.getRuntime().exec(arg);
+            BufferedReader in= new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("gbk")));
+
+            while ((line=in.readLine())!=null){
+                System.out.println(line);   //输出代码 假设是把输出的都.append变成一个String变成line
+				if (!line.isEmpty()) result1.append(line);
+            }
+            in.close();
+            process.waitFor();
+
+            //NEXT
+
+            arg=new String[] {pyDir+"venv\\Scripts\\python.exe",
+                                pyDir + "model.py",
+                                code
+            };
+            process=Runtime.getRuntime().exec(arg);
+            in= new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("gbk")));
+
+            while ((line=in.readLine())!=null){
+                System.out.println(line);   //输出代码 假设是把输出的都.append变成一个String变成line
+				if (!line.isEmpty()) result2.append(line);
+            }
+            in.close();
+            process.waitFor();
+
+            JSONObject jsonObject1=JSONObject.parseObject(result1.toString().trim());
+            JSONObject jsonObject2=JSONObject.parseObject(result2.toString().trim());
+            JSONObject result=new JSONObject();
+            result.putAll(jsonObject1);
+            result.putAll(jsonObject2);
+
+            return result.toString().trim();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String snow(String stock){
+        String line;
         StringBuilder result=new StringBuilder();
         try {
-            String[] arg=new String[] {"python",
-                    pyDir + "model.py",
-                    code,
-                    pyDir + "15.xlsx",
-                    pyDir + "1",
-                    pyDir + "2",
-                    pyDir + "3",
-                    pyDir + "4",
-                    pyDir + "Result_of_Whether.csv",
-                    mark
+            String[] arg=new String[] {pyDir+"venv\\Scripts\\python.exe",
+                    pyDir + "trynewxqw.py",
+                    stock,
             };
             Process process=Runtime.getRuntime().exec(arg);
             BufferedReader in= new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("gbk")));
 
             while ((line=in.readLine())!=null){
                 System.out.println(line);   //输出代码 假设是把输出的都.append变成一个String变成line
-				if (!line.isEmpty()) result.append(line);
+                if (!line.isEmpty()) result.append(line);
             }
             in.close();
             process.waitFor();
-
+            return result.toString().trim();
         }catch (IOException e){
             e.printStackTrace();
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-        return result.toString().trim();
+        return null;
     }
 
 
-    public static String[][] readData(String code,String number){
+
+    public static String[][] readData(String code,String number){   //返回四张表和成长能力
         // 读取csv文件的内容
         String filepath=pyDir+number+"/"+code+".csv";
 
@@ -152,9 +194,6 @@ public class AnalysisUtils {
             result[index]=arr;
             index++;
         }
-
         return result;
-
     }
-
 }
